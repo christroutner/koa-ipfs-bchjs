@@ -38,8 +38,8 @@ RUN sudo ./install.sh
 
 # Clone the project.
 WORKDIR /home/safeuser
-RUN git clone https://github.com/christroutner/koa-ipfs-blog
-WORKDIR /home/safeuser/koa-ipfs-blog
+RUN git clone https://github.com/christroutner/koa-ipfs-bchjs
+WORKDIR /home/safeuser/koa-ipfs-bchjs
 
 # Copy the config file, which determins the internal port and the BCH address
 # to monitor.
@@ -49,10 +49,10 @@ COPY common.js config/env/common.js
 RUN npm install
 
 # Alter the IPFS to a the mounted volume.
-RUN echo "export IPFS_PATH=/home/safeuser/koa-ipfs-blog/ipfs-data" >> /home/safeuser/.profile
+RUN echo "export IPFS_PATH=/home/safeuser/koa-ipfs-bchjs/ipfs-data" >> /home/safeuser/.profile
 
 # Declare the path to volumes for persisting data.
-VOLUME /home/safeuser/koa-ipfs-blog/ipfs-data
+VOLUME /home/safeuser/koa-ipfs-bchjs/ipfs-data
 
 # IPFS port
 EXPOSE 4001
