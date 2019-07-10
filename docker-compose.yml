@@ -5,8 +5,8 @@ bchjs:
   dockerfile: Dockerfile
   container_name: bchjs
   ports:
-    - "3210:3210"  # <host port>:<container port>
-    - "4001:4001"  # IPFS
+    - "5210:3210"  # <host port>:<container port>
+    - "5001:4001"  # IPFS
   volumes:
     - ./ipfs-data:/home/safeuser/koa-ipfs-blog/ipfs-data
   restart: always
